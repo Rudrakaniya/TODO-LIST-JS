@@ -32,14 +32,15 @@ body {
     background-color: var(--light-grey);
      overflow: hidden;
      position: fixed;
+     height: 60px;
      top: 0;
      width: 100%;
     .container {
         display: flex;
         padding: 2vh;
         width: 80%;
-        margin: 0 auto;
-        align-content: space-between;
+        margin: auto;
+        // align-content: space-between;
         justify-content: space-between;
     }
 
