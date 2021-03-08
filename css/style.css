@@ -12,9 +12,22 @@
   margin: 0;
 }
 
+html,
+body {
+  height: 100%;
+  /* Needed for container's min-height  */
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: var(--primarycolor);
+}
+
+.body-container {
+  min-height: 100%;
+  margin-bottom: -40px;
+  /* Put negative height of the footer here */
+  padding-bottom: 40px;
 }
 
 .navbar {
@@ -251,9 +264,7 @@ body {
 }
 
 .footer {
-  position: fixed;
-  left: 0;
-  right: 0;
+  position: relative;
   bottom: 0;
 }
 
