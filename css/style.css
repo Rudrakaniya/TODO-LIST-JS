@@ -34,7 +34,6 @@ body {
   background-color: var(--light-grey);
   overflow: hidden;
   position: fixed;
-  height: 60px;
   top: 0;
   width: 100%;
 }
@@ -43,7 +42,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 2vh;
+  padding: 1em;
   width: 80%;
   margin: auto;
   -webkit-box-pack: justify;
