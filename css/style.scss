@@ -33,20 +33,32 @@ body {
     }
 
     .logo {
-        color: var(--deftextcolor);
+        font-family: 'Caveat', cursive;
+        font-size: 20px;
+        h1 {
+            color: var(--deftextcolor);
+        }
     }
 
     nav {
-
+        display: flex;
         ul {
             margin: 0;
             padding: 0;
             display: flex;
             align-items: center;
             list-style-type: none;
-            justify-content: space-between;
+            // justify-content: space-between;
             li {
+                padding: 3px 10px;
+                border-radius: 25px;
+                border: 2px solid green;
                 color: var(--deftextcolor);
+                
+                p {
+                    color: rgb(24, 252, 24);
+                    font-size: 14px;
+                }
             }
         }
     }
@@ -160,6 +172,10 @@ body {
 }
 
 .footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
     .container {
         margin-top: 2em;
         background-color: var(--light-grey);

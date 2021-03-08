@@ -40,7 +40,18 @@ body {
 }
 
 .navbar .logo {
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+}
+
+.navbar .logo h1 {
   color: var(--deftextcolor);
+}
+
+.navbar nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .navbar nav ul {
@@ -53,13 +64,18 @@ body {
       -ms-flex-align: center;
           align-items: center;
   list-style-type: none;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .navbar nav ul li {
+  padding: 3px 10px;
+  border-radius: 25px;
+  border: 2px solid green;
   color: var(--deftextcolor);
+}
+
+.navbar nav ul li p {
+  color: #18fc18;
+  font-size: 14px;
 }
 
 .new-todo {
@@ -232,6 +248,13 @@ body {
 
 .todo-list .container .todo-items .todo-item .todo-item-content {
   font-size: 18px;
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .footer .container {
