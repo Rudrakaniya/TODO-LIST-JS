@@ -1,7 +1,10 @@
 :root {
   --primarycolor: #18191A;
-  --secondrycolor: #545555;
+  --secondrycolor: #18191A;
   --deftextcolor: #F5F6F7;
+  --light-text: #ebececd8;
+  --color-blue: #35B7FF;
+  --light-grey: #282828;
 }
 
 * {
@@ -15,7 +18,11 @@ body {
 }
 
 .navbar {
-  background-color: #c049c0;
+  background-color: var(--light-grey);
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .navbar .container {
@@ -23,7 +30,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   padding: 2vh;
-  max-width: 100%;
+  width: 80%;
+  margin: 0 auto;
   -ms-flex-line-pack: justify;
       align-content: space-between;
   -webkit-box-pack: justify;
@@ -52,5 +60,202 @@ body {
 
 .navbar nav ul li {
   color: var(--deftextcolor);
+}
+
+.new-todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 6em 0 4em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.new-todo .container {
+  width: 80%;
+  padding: 1em;
+  height: 200px;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 4px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--light-grey);
+  -webkit-box-shadow: -5px -5px 30px 5px red, 5px 5px 30px 5px blue;
+          box-shadow: -5px -5px 30px 5px red, 5px 5px 30px 5px blue;
+}
+
+.new-todo .container .todo-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 300px;
+  width: 100%;
+  gap: 10px;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: inherit;
+      -ms-flex-pack: inherit;
+          justify-content: inherit;
+}
+
+.new-todo .container .todo-form .todo-title,
+.new-todo .container .todo-form .todo-content {
+  width: 90%;
+  padding: 12px;
+  color: var(--deftextcolor);
+  background-color: var(--light-grey);
+  border: 1px solid var(--color-blue);
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.new-todo .container .todo-form .todo-title::-webkit-input-placeholder,
+.new-todo .container .todo-form .todo-content::-webkit-input-placeholder {
+  color: var(--deftextcolor);
+}
+
+.new-todo .container .todo-form .todo-title:-ms-input-placeholder,
+.new-todo .container .todo-form .todo-content:-ms-input-placeholder {
+  color: var(--deftextcolor);
+}
+
+.new-todo .container .todo-form .todo-title::-ms-input-placeholder,
+.new-todo .container .todo-form .todo-content::-ms-input-placeholder {
+  color: var(--deftextcolor);
+}
+
+.new-todo .container .todo-form .todo-title::placeholder,
+.new-todo .container .todo-form .todo-content::placeholder {
+  color: var(--deftextcolor);
+}
+
+.new-todo .container .todo-form .todo-content {
+  min-height: 10em;
+}
+
+.new-todo .container .todo-form .submit-btn {
+  background-color: var(--color-blue);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.todo-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo-list .container {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1.2em;
+  background-color: var(--light-grey);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.todo-list .container .todo-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.todo-list .container .todo-items .todo-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  gap: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #303030;
+  color: var(--deftextcolor);
+}
+
+.todo-list .container .todo-items .todo-item p {
+  text-overflow: ellipsis;
+}
+
+.todo-list .container .todo-items .todo-item .todo-item-date {
+  font-size: 13px;
+  color: var(--light-text);
+}
+
+.todo-list .container .todo-items .todo-item .todo-item-content {
+  font-size: 18px;
+}
+
+.footer .container {
+  margin-top: 2em;
+  background-color: var(--light-grey);
+  padding: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer .container p {
+  font-size: 12px;
+  color: var(--light-text);
 }
 /*# sourceMappingURL=style.css.map */

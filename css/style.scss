@@ -1,7 +1,10 @@
 :root {
     --primarycolor: #18191A;
-    --secondrycolor: #545555;
+    --secondrycolor: #18191A;
     --deftextcolor: #F5F6F7;
+    --light-text: #ebececd8;
+    --color-blue: #35B7FF;
+    --light-grey: #282828;
 }
 
 * {
@@ -15,12 +18,16 @@ body {
 }
 
 .navbar {
-    background-color: rgb(192, 73, 192);
-
+    background-color: var(--light-grey);
+     overflow: hidden;
+     position: fixed;
+     top: 0;
+     width: 100%;
     .container {
         display: flex;
         padding: 2vh;
-        max-width: 100%;
+        width: 80%;
+        margin: 0 auto;
         align-content: space-between;
         justify-content: space-between;
     }
@@ -30,7 +37,7 @@ body {
     }
 
     nav {
-        
+
         ul {
             margin: 0;
             padding: 0;
@@ -41,6 +48,130 @@ body {
             li {
                 color: var(--deftextcolor);
             }
+        }
+    }
+}
+
+.new-todo {
+    display: flex;
+    justify-content: center;
+    margin: 6em 0 4em;
+    align-items: center;
+
+    .container {
+        width: 80%;
+        padding: 1em;
+        height: 200px;
+        height: auto;
+        display: flex;
+        border-radius: 4px;
+        align-items: center;
+        box-sizing: border-box;
+        justify-content: center;
+        background-color: var(--light-grey);
+        box-shadow: -5px -5px 30px 5px red,
+        5px 5px 30px 5px blue;
+        .todo-form {
+            display: flex;
+            box-sizing: border-box;
+            flex-direction: column;
+            min-height: 300px;
+            width: 100%;
+            gap: 10px;
+            align-content: space-around;
+            align-items: center;
+            justify-content: inherit;
+            
+             .todo-title,
+             .todo-content {
+                 width: 90%;
+                 padding: 12px;
+                 color: var(--deftextcolor);
+                 background-color: var(--light-grey);
+                 border: 1px solid var(--color-blue);
+                 border-radius: 4px;
+                 resize: vertical;
+
+                 &::placeholder {
+                     color: var(--deftextcolor);
+                 }
+             }
+             
+             .todo-content {
+                 min-height: 10em;
+             }
+
+            .submit-btn {
+                background-color: var(--color-blue);
+                color: white;
+                padding: 12px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.todo-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .container {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        padding: 1.2em;
+        background-color: var(--light-grey);
+        // align-items: center;
+        box-sizing: border-box;
+        border-radius: 4px;
+        .todo-items {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            .todo-item {
+                display: flex;
+                margin: 0 auto;
+                width: 100%;
+                box-sizing: border-box;
+                padding: 10px;
+                gap: 10px;
+                flex-direction: column;
+                background-color: #303030;
+                color: var(--deftextcolor);
+                
+                p {
+                    text-overflow: ellipsis;
+                }
+
+                .todo-item-date{
+                    font-size: 13px;
+                    color: var(--light-text);
+                }
+                
+                .todo-item-content {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    .container {
+        margin-top: 2em;
+        background-color: var(--light-grey);
+        padding: 2em;
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        p {
+            font-size: 12px;
+            color: var(--light-text);
         }
     }
 }

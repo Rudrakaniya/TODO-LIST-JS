@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todo List</title>
 
     <link rel="stylesheet" href="/css/style.css" />
 </head>
@@ -19,8 +19,7 @@
             </div>
             <nav>
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
+                    <li>Sync</li>
                 </ul>
             </nav>
         </div>
@@ -28,19 +27,31 @@
 
     <section class="new-todo">
         <div class="container">
-            <input type="text">
+            <form class="todo-form">
+                <input class="todo-title" autocomplete="off" type="text" id="todo-title" name="todoTitle"
+                    placeholder="Your Title..">
+                <textarea class="todo-content" id="todo-content" name="todoContent"
+                    placeholder="Write something.."></textarea>
+                <input class="submit-btn" id="submit-btn" type="submit" value="Submit">
+            </form>
         </div>
     </section>
 
     <section class="todo-list">
         <div class="container">
-            <div class="todo-items">
-                <div class="todo-item">
+            <div class="todo-items" id="todo-items">
 
-                </div>
             </div>
         </div>
     </section>
+
+    <section class="footer">
+        <div class="container">
+            <p>Made with ❤️️ in India</p>
+            <p>by Rudra Kaniya</p>
+        </div>
+    </section>
+
     <script src="/script/main.js"></script>
 </body>
 
