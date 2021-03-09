@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -20,8 +21,8 @@
                 </div>
                 <nav>
                     <ul>
-                        <li class="sync-now">
-                            <p>Sync now</p>
+                        <li id="sync-now-btn" class="sync-now">
+                            <p id="sync-now-p">Sync now <i id="sync-spinner" class=""></i></p>
                         </li>
                     </ul>
                 </nav>
@@ -43,7 +44,10 @@
         <section class="todo-list">
             <div class="container">
                 <div class="todo-items" id="todo-items">
-
+                    <div class="empty-div" id="empty-div">
+                        <img id="empty-img" src="images/undraw_empty_xct9.svg" alt="Empty Todo List">
+                        <p>Create new Todo's</p>
+                    </div>
                 </div>
             </div>
         </section>
