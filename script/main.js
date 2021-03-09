@@ -12,7 +12,7 @@ var userData = {};
 
 const makeUI = (elementKey, innerValue) => {
   emptyDiv.style.display = "none";
-  console.log("innerValue = " + innerValue);
+  // console.log("innerValue = " + innerValue);
   document.getElementById("todo-items").style.minHeight = "unset";
   var li = document.createElement("div");
   li.className = "todo-item";
@@ -29,9 +29,9 @@ const makeUI = (elementKey, innerValue) => {
 };
 
 const setTodoList = (data) => {
-  console.log("Setting data!!");
+  // console.log("Setting data!!");
   for (const [key, value] of Object.entries(data)) {
-    console.log(key + ":-");
+    // console.log(key + ":-");
     makeUI(key, value);
   }
 };
@@ -58,11 +58,11 @@ const setPostData = (data) => {
   localStorage.setItem("userData", JSON.stringify(data));
   updatePostID(postId);
   // setTodoList(data);
-  console.log(data);
+  // console.log(data);
   makeUI(postId - 1, data[postId - 1]);
   mTitle.value = "";
   mContent.value = "";
-  console.log("Data Saved Sucessfully!!");
+  // console.log("Data Saved Sucessfully!!");
 };
 
 const submitBtnClicked = () => {
@@ -87,7 +87,7 @@ const deleteTodo = (deleteTodoId) => {
   localStorage.setItem("userData", JSON.stringify(localObject));
   document.getElementById(deleteTodoId.id).style.display = "none";
   if (Object.keys(localObject).length == 0) {
-    console.log("its empty");
+    // console.log("its empty");
     emptyDiv.style.display = "block";
   }
 };
@@ -98,7 +98,10 @@ mSubmit.addEventListener("click", (event) => {
 });
 
 itemsContainer.addEventListener("click", (event) => {
-  deleteTodo(event.target);
+  console.log(event.target.className);
+  if (event.target.className == "delete-todo") {
+    deleteTodo(event.target);
+  }
 });
 
 syncNowBtn.addEventListener("click", () => {
