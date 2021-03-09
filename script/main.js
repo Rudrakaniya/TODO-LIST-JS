@@ -108,6 +108,6 @@ syncNowBtn.addEventListener("click", () => {
     syncSpinner.classList = "";
     document.getElementById("sync-now-btn").style.borderColor = "#4ee44e";
     document.getElementById("sync-now-p").style.color = "#4ee44e";
-    document.getElementById("sync-now-p").innerText = "Synced";
+    // document.getElementById("sync-now-p").innerText = "Synced";
   }, 1600);
 });
