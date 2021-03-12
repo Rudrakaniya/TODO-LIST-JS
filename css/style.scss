@@ -11,10 +11,6 @@
     padding: 0;
     margin: 0;
 }
-html,
-body {
-    /* Needed for container's min-height  */
-}
 
 body {
     // position: relative;
@@ -27,7 +23,7 @@ body {
     
 
     flex: 1;
-padding: 20px;
+    padding: 20px;
     // margin-bottom: -40px;
     // /* Put negative height of the footer here */
     // padding-bottom: 40px;
@@ -83,61 +79,68 @@ padding: 20px;
 }
 
 .new-todo {
-    display: flex;
-    justify-content: center;
     margin: 7em 0 3em;
-    align-items: center;
 
-    .container {
-        width: 86%;
-        padding: 1em;
-        height: 200px;
-        height: auto;
+    .new-todo-hoc {
+        width: 100%;
         display: flex;
-        border-radius: 4px;
-        align-items: center;
-        box-sizing: border-box;
+        align-items: center;        
         justify-content: center;
-        background-color: var(--light-grey);
-        box-shadow: -5px -5px 30px 5px red,
-        5px 5px 30px 5px blue;
-        .todo-form {
+        .new-todo-img {
+            display: none;
+        }
+    
+        .container {
+            width: 86%;
+            padding: 1em;
+            height: 200px;
+            height: auto;
             display: flex;
-            box-sizing: border-box;
-            flex-direction: column;
-            min-height: 300px;
-            width: 100%;
-            gap: 10px;
-            align-content: space-around;
+            border-radius: 4px;
             align-items: center;
-            justify-content: inherit;
-            
-             .todo-title,
-             .todo-content {
-                 width: 90%;
-                 padding: 12px;
-                 color: var(--deftextcolor);
-                 background-color: var(--light-grey);
-                 border: 1px solid var(--color-blue);
-                 border-radius: 4px;
-                 resize: vertical;
-
-                 &::placeholder {
+            box-sizing: border-box;
+            justify-content: center;
+            background-color: var(--light-grey);
+            box-shadow: -5px -5px 30px 5px red,
+            5px 5px 30px 5px blue;
+            .todo-form {
+                display: flex;
+                box-sizing: border-box;
+                flex-direction: column;
+                min-height: 300px;
+                width: 100%;
+                gap: 10px;
+                align-content: space-around;
+                align-items: center;
+                justify-content: inherit;
+                
+                 .todo-title,
+                 .todo-content {
+                     width: 90%;
+                     padding: 12px;
                      color: var(--deftextcolor);
+                     background-color: var(--light-grey);
+                     border: 1px solid var(--color-blue);
+                     border-radius: 4px;
+                     resize: vertical;
+    
+                     &::placeholder {
+                         color: var(--deftextcolor);
+                     }
                  }
-             }
-             
-             .todo-content {
-                 min-height: 10em;
-             }
-
-            .submit-btn {
-                background-color: var(--color-blue);
-                color: white;
-                padding: 12px 20px;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
+                 
+                 .todo-content {
+                     min-height: 10em;
+                 }
+    
+                .submit-btn {
+                    background-color: var(--color-blue);
+                    color: white;
+                    padding: 12px 20px;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                }
             }
         }
     }
@@ -147,7 +150,7 @@ padding: 20px;
     display: flex;
     justify-content: center;
     // align-items: top;
-    min-height: 250px;
+    // min-height: 250px;
     align-items: flex-start;
     .container {
         width: 86%;
@@ -182,7 +185,7 @@ padding: 20px;
                 }
                 p {
                     color: var(--light-text);
-
+                    text-overflow: ellipsis;
                 }
 
             }
@@ -228,6 +231,7 @@ padding: 20px;
                
 
                 p {
+                    overflow: hidden;
                     text-overflow: ellipsis;
                 }
 
@@ -257,4 +261,85 @@ padding: 20px;
             color: var(--light-text);
         }
     }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .new-todo {
+        margin: 9em 0 6em;
+        .new-todo-hoc{
+            width: 70%;
+            margin: auto;
+            gap: 10%;
+            box-sizing: border-box;
+            
+            .new-todo-img {
+                display: block;
+                max-width: 50%;
+                height: auto;
+                margin: auto;
+            }
+
+            .container {
+                max-width: 40%;
+                height: 400px;
+
+                .todo-form {
+                    justify-content: space-evenly;
+                }
+            }
+        }
+        
+    }
+
+    .todo-list {
+
+        .container {
+
+            .todo-items { 
+                min-height: 500px;
+                flex-direction: row;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                gap: 14px;
+                
+                .empty-div {
+
+                    img {
+                        max-width: 360px;
+                    }
+
+                }
+
+                .todo-item {
+                    width: 48%;
+                    margin: unset;
+
+                    .item-title {
+
+                        .delete-todo {
+                            width: 26px;
+                        }
+
+                        .todo-item-date {
+                        }
+                    }
+
+                    .todo-item-content {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        .container {
+            margin-top: 4em;
+            p {
+                font-size: 13px;
+            }
+        }
+    }
+
 }
